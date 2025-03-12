@@ -42,7 +42,7 @@ If you prefer, there is a [Typescript implementation](https://github.com/tiddly-
 
 `git-sync` will likely get you from a dull normal git repo with some
 changes to an updated dull normal git repo equal to origin. It does
-this by commiting, pulling & pushing as appropriate.
+this by committing, pulling & pushing as appropriate.
 
 Care has been taken that any kind of problem, pre-existing or not,
 results in clear error messages and non-zero return code, but of
@@ -90,12 +90,12 @@ The flow is roughly:
 
 1. Sanity checks. You don't want to do this in the middle of a rebase.
 2. Check for new files; exit if there are, unless allowed (see Options). In check mode, exit with 0.
-3. Check for auto-commitable changes.
+3. Check for auto-committable changes.
 4. Perform auto-commit if there are any, see options.
-5. Do one more check for leftover changes / general tidyness.
+5. Do one more check for leftover changes / general tidiness.
 6. Fetch the upstream.
 7. Relate upstream to ours. If ahead, push. If behind, fast-forward. If diverged, rebase, then push.
-6. At exit, assert sync state once more just to be safe.
+8. At exit, assert sync state once more just to be safe.
 
 On the first invocation, `git-sync` will ask you to enlist the
 current branch for sync using git config. This has to be done once for
@@ -125,7 +125,7 @@ below).
 
 A string which is being eval'ed by this script to perform an
 auto-commit. Here you can run a commit script which should not
-leave any uncommited state. The default will commit modified or
+leave any uncommitted state. The default will commit modified or
 all files with a more or less useful message.
 
 By default, commit is done using:
@@ -146,9 +146,9 @@ even if the matching `git config` option is not set.
 `-s` is the equivalent of `branch.$branch_name.sync`, allowing syncing a branch
 even if the matching `git config` option is not set.
 
-# `contrib` contents
+## `contrib` contents
 
-## git-sync-on-inotify
+### git-sync-on-inotify
 
 Automatically synchronize your git repository whenever a file is touched.
 
@@ -166,20 +166,20 @@ GIT_SYNC_INTERVAL time.
 
 Automatically sync upon local filesystem changes using modd.
 
-https://github.com/cortesi/modd
+<https://github.com/cortesi/modd>
 
 This is a more robust solution to sync on local chances, but will not
 poll upstream except on startup. If you manage not to interleave
 sessions, that's fine.
 
-# License
+## License
 
 I declare this work to be useable under the provisions of the CC0 license.
 
-http://creativecommons.org/publicdomain/zero/1.0/
+<http://creativecommons.org/publicdomain/zero/1.0/>
 
 Attribution is appreciated, but not required.
 
-# Thanks
+## Thanks
 
 Thanks go to all the people behind git.
